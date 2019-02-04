@@ -1,0 +1,173 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 222 10/21/2009 SJ Full Version
+# Date created = 17:33:28  August 29, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		grpTop_timingTest_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16F484C6
+set_global_assignment -name TOP_LEVEL_ENTITY grpTop
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:31:09  Студзень 11, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_G21 -to clock50Mhz
+set_location_assignment PIN_F1 -to key_restart
+set_location_assignment PIN_W10 -to nCS
+set_location_assignment PIN_AB14 -to nLDAC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nCS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nLDAC
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_location_assignment PIN_U7 -to MISO_to_the_LAN
+set_location_assignment PIN_V5 -to MOSI_from_the_LAN
+set_location_assignment PIN_W7 -to SCLK_from_the_LAN
+set_location_assignment PIN_V8 -to in_port_to_the_LAN_NINT
+set_location_assignment PIN_Y10 -to out_port_from_the_LAN_CS
+set_location_assignment PIN_R10 -to out_port_from_the_LAN_RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SCLK_from_the_LAN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOSI_from_the_LAN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MISO_to_the_LAN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in_port_to_the_LAN_NINT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to out_port_from_the_LAN_CS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to out_port_from_the_LAN_RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[4]
+set_location_assignment PIN_AA7 -to count
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_global_assignment -name ENABLE_DRC_SETTINGS ON
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name AUTO_PACKED_REGISTERS_STRATIXII NORMAL
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name MUX_RESTRUCTURE OFF
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name SYNCHRONIZATION_REGISTER_CHAIN_LENGTH 3
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to "altpll_m4_d5:altpll_m4_d5_inst|altpll:altpll_component|altpll_m4_d5_altpll1:auto_generated|wire_pll1_clk[1]" -disable
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_location_assignment PIN_U14 -to dac_data_out[11]
+set_location_assignment PIN_AA4 -to dac_data_out[10]
+set_location_assignment PIN_AA5 -to dac_data_out[9]
+set_location_assignment PIN_AB15 -to dac_data_out[8]
+set_location_assignment PIN_AB4 -to dac_data_out[7]
+set_location_assignment PIN_AB10 -to dac_data_out[6]
+set_location_assignment PIN_AA13 -to dac_data_out[5]
+set_location_assignment PIN_AB13 -to dac_data_out[4]
+set_location_assignment PIN_AA10 -to dac_data_out[3]
+set_location_assignment PIN_AB8 -to dac_data_out[2]
+set_location_assignment PIN_AA8 -to dac_data_out[1]
+set_location_assignment PIN_AB5 -to dac_data_out[0]
+set_location_assignment PIN_AA14 -to nRESET
+set_location_assignment PIN_W13 -to READ
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nRESET
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to READ
+set_location_assignment PIN_V12 -to dac_chn_out[1]
+set_location_assignment PIN_V11 -to dac_chn_out[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_chn_out[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_chn_out[0]
+set_location_assignment PIN_AA15 -to count[0]
+set_location_assignment PIN_V14 -to count[1]
+set_location_assignment PIN_Y13 -to count[2]
+set_location_assignment PIN_U13 -to count[3]
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/drivers/DAC7624/dac.sv
+set_global_assignment -name VERILOG_FILE ../source/drivers/DAC7624/dac_7624.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/drivers/spidac_master_MCP4921/spidac.sv
+set_global_assignment -name VERILOG_FILE ../source/altclkctrl/altclkctra.v
+set_global_assignment -name SDC_FILE grpTop.sdc
+set_global_assignment -name QIP_FILE ../qsys/cpu_eth/output/synthesis/sopc.qip
+set_global_assignment -name VERILOG_FILE "../source/interface/ENC28J60-H/eth_top.v"
+set_global_assignment -name VHDL_FILE ../source/drivers/spidac_master_MCP4921/CLOCK_DIVIDER.vhd
+set_global_assignment -name VHDL_FILE ../source/drivers/spidac_master_MCP4921/SPIDAC_MASTER_MCP4921.vhd
+set_global_assignment -name VERILOG_FILE ../source/altpll/altpll_m4_d5.v
+set_global_assignment -name VHDL_FILE ../source/functions/initializer.vhd
+set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag_interface.v
+set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/grpTop.sv
+set_global_assignment -name VERILOG_FILE ../source/functions/indicator16.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/functions/gate.sv
+set_global_assignment -name VERILOG_FILE ../source/functions/command.v
+set_global_assignment -name VERILOG_FILE ../source/functions/selector.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/functions/counter/counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/functions/pwm.sv
+set_global_assignment -name HEX_FILE sopc_onchip_mem.hex
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_location_assignment PIN_AB17 -to t_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to t_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clock50Mhz
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
