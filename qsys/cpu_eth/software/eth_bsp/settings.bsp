@@ -4,8 +4,8 @@
         <BspVersion>default</BspVersion>
         <BspGeneratedTimeStamp>Dec 5, 2018 9:53:10 AM</BspGeneratedTimeStamp>
         <BspGeneratedUnixTimeStamp>1543992790391</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/taras/altera/projects/scanJUNO/qsys/cpu_eth/software/eth_bsp</BspGeneratedLocation>
-        <BspSettingsFile>/home/taras/altera/projects/scanJUNO/qsys/cpu_eth/software/eth_bsp/settings.bsp</BspSettingsFile>
+        <BspGeneratedLocation>/</BspGeneratedLocation>
+        <BspSettingsFile>./settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../sopc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>

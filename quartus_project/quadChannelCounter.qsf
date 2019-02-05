@@ -37,7 +37,7 @@
 
 
 set_global_assignment -name FAMILY "Cyclone III"
-set_global_assignment -name DEVICE EP3C16U484C6
+set_global_assignment -name DEVICE EP3C16F484C6
 set_global_assignment -name TOP_LEVEL_ENTITY quadChannelCounter
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:31:09  Студзень 11, 2018"
@@ -83,7 +83,6 @@ set_global_assignment -name MUX_RESTRUCTURE OFF
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
 set_global_assignment -name SYNCHRONIZATION_REGISTER_CHAIN_LENGTH 3
-set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to "altpll_m4_d5:altpll_m4_d5_inst|altpll:altpll_component|altpll_m4_d5_altpll1:auto_generated|wire_pll1_clk[1]" -disable
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_location_assignment PIN_U14 -to dac_data_out[11]
@@ -106,25 +105,10 @@ set_location_assignment PIN_AA15 -to count[0]
 set_location_assignment PIN_V14 -to count[1]
 set_location_assignment PIN_Y13 -to count[2]
 set_location_assignment PIN_U13 -to count[3]
-set_global_assignment -name SYSTEMVERILOG_FILE ../source/drivers/DAC7624/dac.sv
-set_global_assignment -name VERILOG_FILE ../source/drivers/DAC7624/dac_7624.v
-set_global_assignment -name QIP_FILE ../qsys/cpu_eth/output/synthesis/sopc.qip
-set_global_assignment -name VERILOG_FILE "../source/interface/ENC28J60-H/eth_top.v"
-set_global_assignment -name VHDL_FILE ../source/functions/initializer.vhd
-set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag_interface.v
-set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag.v
-set_global_assignment -name VERILOG_FILE ../source/functions/command.v
-set_global_assignment -name VERILOG_FILE ../source/functions/selector.v
-set_global_assignment -name SYSTEMVERILOG_FILE ../source/functions/counter/counter.sv
-set_global_assignment -name HEX_FILE ../qsys/cpu_eth/software/eth/mem_init/sopc_onchip_mem.hex
 set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
 set_location_assignment PIN_AB17 -to t_clk
-set_global_assignment -name SOURCE_FILE quadChannelCounter.qsf
-set_global_assignment -name SDC_FILE quadChannelCounter.sdc
-set_global_assignment -name SYSTEMVERILOG_FILE ../source/quadChannelCounter.sv
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -139,14 +123,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MISO_to_the_LAN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in_port_to_the_LAN_NINT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to out_port_from_the_LAN_CS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to out_port_from_the_LAN_RST
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ch_pwm_out[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nRESET
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_data_out[0]
@@ -166,4 +142,26 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_chn_out[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_chn_out[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to t_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clock50Mhz
+
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_NCE_PIN OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name QIP_FILE ../qsys/cpu_eth/software/eth/mem_init/meminit.qip
+set_global_assignment -name SDC_FILE quadChannelCounter.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/drivers/DAC7624/dac.sv
+set_global_assignment -name VERILOG_FILE ../source/drivers/DAC7624/dac_7624.v
+set_global_assignment -name QIP_FILE ../qsys/cpu_eth/sopc/synthesis/sopc.qip
+set_global_assignment -name VERILOG_FILE "../source/interface/ENC28J60-H/eth_top.v"
+set_global_assignment -name VHDL_FILE ../source/functions/initializer.vhd
+set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag_interface.v
+set_global_assignment -name VERILOG_FILE ../source/interface/vJtag/vjtag.v
+set_global_assignment -name VERILOG_FILE ../source/functions/command.v
+set_global_assignment -name VERILOG_FILE ../source/functions/selector.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/functions/counter/counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../source/quadChannelCounter.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
