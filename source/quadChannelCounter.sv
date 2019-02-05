@@ -23,21 +23,11 @@
 // Tel: 8-906-796-76-53 (russia)
 //-------------------------------------------------------------------------------
 
-module grpTop(
+module quadChannelCounter(
 
 	input clock50Mhz,
 
-	//input [9:0]keys_gate,
 	input key_restart,
-
-	output [3:0]gate_out,
-
-	// light indicator
-	/*output [9:0]gate_led,
-	output [7:0]address_hex0,
-	output [7:0]address_hex1,
-	output [7:0]address_hex2,
-	output [7:0]address_hex3,*/
 
 	output READ,
 	output nCS,
@@ -53,30 +43,13 @@ module grpTop(
 	output wire  SCLK_from_the_LAN,        
 	input  wire  in_port_to_the_LAN_NINT,  
 
-	output pwm_out,
-	output [9:0]ch_pwm_out,
-
 	input [3:0]count,
-	//output [3:0]t_cflag,
 	output t_clk
   );
 
 localparam FRQ=50000000;
-
-/*wire clock40Mhz;
-wire clock200Mhz;
-altpll_m4_d5 altpll_m4_d5_inst
-(
-	clock50Mhz,
-	clock40Mhz,
-	clock200Mhz
-);*/
 wire clk;
-//altclkctra altclkctra_inst
-//(
-//   clock50Mhz,
-//	clk
-//);
+
 // Instantiation initializer. Signals and registers are declared.
 wire init;
 wire reset;
@@ -143,8 +116,8 @@ eth_top eth_inst
 	signals_export[3],
 
 	addr_export,
-	data_in, // output data (from FOGA)
-	wdata_export, // input data (from NIOS II)
+	data_in, 		// output data (from FOGA)
+	wdata_export, 	// input data (from NIOS II)
 
 	swrite_export,
 	sread_export,
@@ -193,21 +166,6 @@ command#(.CLK_FREQ(FRQ)) command_inst
 	data32
 );	
 
-// Instantiation PWM. Signals and registers declared.
-wire [7:0]data_pwm;
-wire gen;
-// wire pwm_test; // when test count and gen
-pwm pwm_inst(
-	clk, // 50 Mhz -- default
-	addr,
-	data, data_pwm,
-	write, init, reset,
-
-	write32,
-   data32,
-
-	gen
-);
 // Instantiation counter. Signals and registers declared.
 wire [7:0]data_counter;
 wire start_counter;
@@ -254,27 +212,7 @@ counter#(.CLK_FREQ(FRQ)) counter_inst
 	start_counter,
 	stopStep_export,
 
-	count//, //in_clk, //gen,//clock200Mhz,  // count 
-
-	//t_cflag
-);
-
-// Instantiation gate. Signals and registers declared.
-wire [7:0]data_gate;
-gate gate_inst
-(
- 	clk, // 50 MHz for default settings
-	addr,
-	data, data_gate,
-	write, init, reset,
-
-	gate_out,
-	//keys_gate,
-	//gate_led,
-
-	gen,
-	ch_pwm_out,
-	pwm_out
+	count 
 );
   
 // Instantiation DAC. Signals and registers declared.
@@ -302,11 +240,6 @@ wire [3:0]channels_DAC;
  start_counter
 );
 
-// Instantiation addr_indicators. Signals and registers declared.
-/*assign address_hex0[7:0] = 8'b11111111;
-assign address_hex1[7:0] = 8'b11111111;
-assign address_hex2[7:0] = 8'b11111111;
-assign address_hex3[7:0] = 8'b11111111;*/
 
 reg [7:0]version;
 //reg [7:0]switch;
@@ -316,9 +249,7 @@ assign version[7:0] = 8'b00010000;
 // Instantiation selector. Signals and registers declared.
 selector selector_data_vjtag_in(
  addr,
- data_gate,
  data_counter,
- data_pwm,
  version,
  //switch,
  data_DAC,
